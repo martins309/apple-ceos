@@ -14,6 +14,8 @@ app.set('view engine', 'html');
 
 // public folder for all public items 
 app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false}));
 
 const server = http.createServer(app);
 
