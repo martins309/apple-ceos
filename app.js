@@ -3,6 +3,10 @@ const http = require('http'),
     hostname = '127.0.0.1',
     port = 3001;
 
+const cors = require('cors')
+
+
+
 const express = require('express'),
     es6Renderer = require('express-es6-template-engine');
 
@@ -11,6 +15,8 @@ const app = express();
 app.engine('html', es6Renderer);
 app.set('views', 'templates');
 app.set('view engine', 'html');
+
+app.use(cors());
 
 // public folder for all public items 
 app.use(express.static('public'));

@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
         lower: true,
         strict: true
     });
-    const response = await ceosModel. addEntry(ceo_name, slug, ceo_year);
+    const response = await ceosModel.addEntry(ceo_name, slug, ceo_year);
     console.log("post data response is: ", response);
     if (response.rowCount >= 1) {
         res.redirect('/ceos')
